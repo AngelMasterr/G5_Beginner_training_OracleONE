@@ -3,11 +3,33 @@
 <h1>PROGRAMA <br></h1>
 
 <script> //Empeza a utilizar codigo JavaScript
+
     var año = 2023;
     document.write("Juan tiene: " + (año-2003) + " años <br><br>");
     document.write("Manuel tiene: " + (año-1998) + " años <br><br>");
     document.write("Carlos tiene: " + (año-1991) + " años <br><br>");
     document.write("La suma de todos es de: " + ((3*año)-(2003+1998+1991)) + "<br><br>");
+
+    año = 2024 //No es necesario volver a utilizar la palabra clave "var" si ya se definio la variables
+    document.write("Juan tiene: " + (año-2003) + " años <br><br>");
+
+    //Se recomienda usar "let" para definir variables, "var" tiene alcance global lo que puede convertir palabras 
+    //en variables antes de declararlas, a contrario de "let" que debe declararla antes de utilizarla
+    let promedio = ((año-2003)+(año-1998)+(año-1991))/3
+    document.write("el promedio de las edades es: " + promedio + " años <br><br>");
+    //Math.floor: convierte el numero a entero (elimina los decimales)
+    document.write("el promedio de las edades es: " + Math.floor(promedio) + " años <br><br>");
+    //Math.round: redondea el numero al entero mas cercano
+    document.write("el promedio de las edades es: " + Math.round(promedio) + " años <br><br><br>");
+
+    let name1 = "Paola";    let edadPaola = 25;
+    let name2 = "María";    let edadMaria = 27;
+    let name3 = "Martha";   let edadMartha = 30;
+    promedio = (edadPaola + edadMaria + edadMartha)/3
+    document.write("el promedio de las edades de: "+name1+", "+name2+" y "+name3+" es: "+ Math.round(promedio)+" años <br><br>");
+
+
+
     
 </script>
 
