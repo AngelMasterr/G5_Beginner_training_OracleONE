@@ -20,15 +20,18 @@
     //Math.floor: convierte el numero a entero (elimina los decimales)
     document.write("el promedio de las edades es: " + Math.floor(promedio) + " años <br><br>");
     //Math.round: redondea el numero al entero mas cercano
-    document.write("el promedio de las edades es: " + Math.round(promedio) + " años <br><br><br>");
+    document.write("el promedio de las edades es: " + Math.round(promedio) + " años <br><br>");
 
     let name1 = "Paola";    let edadPaola = 25;
     let name2 = "María";    let edadMaria = 27;
     let name3 = "Martha";   let edadMartha = 30;
     promedio = (edadPaola + edadMaria + edadMartha)/3
-    document.write("el promedio de las edades de: "+name1+", "+name2+" y "+name3+" es: "+ Math.round(promedio)+" años <br><br>");
+    document.write("el promedio de las edades de: "+name1+", "+name2+" y "+name3+" es: "+ Math.round(promedio)+" años");
 
-
+    //Para realizar varios saltos de lines sin la necesidad de repetir varias veces "<br>""
+    var saltoLinea = "<br>"
+    document.write(saltoLinea.repeat(5));
+    document.write("Empezar a trabajar desde aquí, despues de 5 saltos de linea");
 
     
 </script>
