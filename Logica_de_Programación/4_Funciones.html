@@ -17,11 +17,36 @@ Definir funciones
 
     // funcion que escriba en el documento lo que le ponga
     function escribir(phrase){
-        document.write(`escriba lo que quiera perro: ${phrase}`)
+        document.write(`escriba aquí: ${phrase}`)
     }
     saltoLinea(3)
     escribir(`pues pongo lo que quiero mi pez`)
 
+    saltoLinea(3)
+    document.write(`<h3> Calcular el Indice de Masa Corporal </h3>`)
+    
+    // funcion que calcule el indice de masa corporal
+    function calcularIMC(nombre, peso, altura){
+        imc = peso / (altura * altura)
+        saltoLinea(1)
+        escribir(`El indice de masa corporal de ${nombre} es: ${imc}`)
+    }
+    let nombre = `Angel`
+    let peso = 78
+    let altura = 1.78
+    calcularIMC(nombre, peso, altura)
+   
+    nombre = `Cristian`
+    peso = 70
+    altura = 1.80
+    calcularIMC(nombre, peso, altura)
+
+    // Escribir el IMC segun los datos introducido
+    nombre = prompt(`Introduzca el nombre de la persona: `)
+    peso = parseInt(prompt(`Introduzca el peso de ${nombre} en kg: `))
+    altura = parseFloat(prompt(`introduza la altura de ${nombre} en metros: `))
+    saltoLinea(2)
+    calcularIMC(nombre, peso, altura)
 
 
 
