@@ -6,14 +6,24 @@ Definir funciones
     // funcion que permite crear saltos de linea segun lo deseado
     function saltoLinea(n){
         document.write("<br>".repeat(n));
-    }
-    
+    }    
     saltoLinea(3);
     document.write("Estoy empezandoa a escribir en el tercer salto de linea");
     saltoLinea(2)
     var n = 2;
     // Es mejor usar la comillas simples ` `, estas tambien permiten introducir variables con ${var}
     document.write(`ahora solo use ${n} saltos de linea, esto es muy facil`)
+
+
+    // funcion que escriba en el documento lo que le ponga
+    function escribir(phrase){
+        document.write(`escriba lo que quiera perro: ${phrase}`)
+    }
+    saltoLinea(3)
+    escribir(`pues pongo lo que quiero mi pez`)
+
+
+
 
 
 
