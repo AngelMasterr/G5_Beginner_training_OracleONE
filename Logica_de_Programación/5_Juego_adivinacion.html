@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h3>Juego de adivinación</h3>
+
+<script>
+    function saltarLinea(n){
+        document.write("<be>".repeat(n));
+    }
+    function escribir(frase){
+        document.write(frase + "<br>");
+    }
+
+    // empezar a realizar el juego
+    let numPensado = Math.round(Math.random()*10); // random: numero aleatorio ente 0 y 1
+    let numLanzado = parseInt(prompt("Introduza un numero entre 0-10:"));
+
+    if (numLanzado == numPensado){
+        escribir("Usted acerto el numero, Felicitaciones");
+    }
+    if (numLanzado > numPensado){
+        escribir(`Fallaste, tu numero es mayor que ${numPensado}`);
+    }
+    if (numLanzado < numPensado){
+        escribir(`Fallaste, tu numero es menor que ${numPensado}`);
+    }
+
+
+
+</script>
