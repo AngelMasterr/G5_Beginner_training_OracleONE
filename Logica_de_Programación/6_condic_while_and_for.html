@@ -1,0 +1,30 @@
+<meta charset="UTF-800">
+
+<h3>PROGRAMA - AÑO MUNDIA DE LA FIFA</h3>
+
+<script>
+    // saltar lineas
+    function saltarLinea(n){
+        document.write("<br>".repeat(n));
+    }
+    // excribir en html
+    function escribir(frase){
+        document.write(frase + "<br>");
+    }
+
+    // mostrar todos lo mundiales de la fifa hasta el año 2020
+    let añoMundial = 1930;
+    let añoLimite = parseInt(prompt("Ingrese el año limite para mostra los mundiales:"))
+
+    // while(): condicional que peude ser infinito si no llega la valor deseado
+    while(añoMundial <= añoLimite){        
+        escribir(`Hubo mundia de la FIFA en el año ${añoMundial}`);
+        añoMundial += 4;
+    }
+    
+    // for(): condicional con un limite indicado
+    saltarLinea(2)
+    for(let i = 1930; i <= añoLimite; i += 4){        
+        escribir(`Hubo mundia de la FIFA en el año ${i}`);   
+    }     
+</script>

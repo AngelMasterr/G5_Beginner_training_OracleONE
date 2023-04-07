@@ -1,0 +1,30 @@
+<meta charset="UTF-800">
+
+<h3>PROGRAMA - CALCULAR LA TABLA DE MULTIPLICAR</h3>
+
+<script>
+    // saltar lineas
+    function saltarLinea(n){
+        document.write("<br>".repeat(n));
+    }
+    // excribir en html
+    function escribir(frase){
+        document.write(frase + "<br>");
+    }
+
+    // Calcular la tabala de multiplicar de x desde 1 hasta el numero deseado
+    let multNum = parseInt(prompt("Introduzca el numero que desea multiplicar:"));
+    let hastaNum = parseInt(prompt("Hasta que numero desea multiplicar:"))
+    let n = 1 
+
+    // while(): condicional puede ser infinito
+    while(n <= hastaNum){
+        escribir(`el numero ${multNum} x ${n} = ${multNum*n}`)
+        n += 1
+    }
+    // for(): condional con limite puesto
+    saltarLinea(2);
+    for(let n = 1; n <= hastaNum; n += 1){
+        escribir(`el numero ${multNum} x ${n} = ${multNum*n}`)
+    }
+</script>
