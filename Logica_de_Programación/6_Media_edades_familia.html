@@ -1,0 +1,38 @@
+<meta charset="UTF-800">
+
+<h3>PROGRAMA - CALCULAR LA MEIDA DE EDAD DE UNA FAMILIA</h3>
+
+<script>
+    // saltar lineas
+    function saltarLinea(n){
+        document.write("<br>".repeat(n));
+    }
+    // excribir en html
+    function escribir(frase){
+        document.write(frase + "<br>");
+    }
+
+    // Calcular la media de edades de una familia
+    let sizeFamily = parseInt(prompt("Introduzca el numero de integrantes de la familia:"));
+    let edades = 0
+    
+    for(i = 1; i <= sizeFamily; i++){
+        // push(): agrega elementos al arreglo o lista"[]"
+        edades += parseInt(prompt(`Introduzca la edad del integrante No ${i} por favor`));
+    }
+    escribir(`La media de edad de la familia es: ${edades/sizeFamily}`);
+
+
+    // Escribir un array con todos los numeros pares hasta el numero dado   
+    let numero = parseInt(prompt("Introduzca un numero para encontrar sus pares:"));
+    let pares = []
+    document.write(`<h3>PROGRAMA - CALCULAR LOS NUMERO PARES HASTA EL ${numero}</h3>`);
+
+    for(let i = 2; i <= numero; i += 2){
+        pares.push(i)
+    }
+    escribir(`la lista de pares es: ${pares}`)
+
+
+    
+</script>
