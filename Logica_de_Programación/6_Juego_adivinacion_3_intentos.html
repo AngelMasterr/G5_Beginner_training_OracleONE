@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<h3>Juego de adivinación</h3>
+
+<script>
+    function saltarLinea(n){
+        document.write("<be>".repeat(n));
+    }
+    function escribir(frase){
+        document.write(frase + "<br>");
+    }
+
+    // empezar a realizar el juego
+    let numPensado = Math.round(Math.random()*10); // random: numero aleatorio ente 0 y 1
+    for (let i = 1; i <= 3; i++){
+        var numLanzado = parseInt(prompt(`Intento No ${i} Introduza un numero entre 0-10:`));
+
+        if (numLanzado == numPensado){
+            alert("Usted acerto el numero, Felicitaciones");
+            escribir(`FELCICITACIONES ADIVINASTE CON EL NUMERO: ${numLanzado}`);
+            break
+        }
+        if (numLanzado > numPensado){
+            alert(`Fallaste, tu numero es mayor`);
+        }
+        if (numLanzado < numPensado){
+            alert(`Fallaste, tu numero es menor`);
+        }
+        if (i == 3){
+            escribir(`FALLASTE PERRO EL NUMERO ERA: ${numPensado}`);
+        }
+    }     
+
+</script>
