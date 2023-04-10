@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h3>CREAR INPUT Y BOTON</h3>
+
+<input/> <!-- crea una caja de texto -->
+<button>Verificar si acerto con el secreto</button> <!-- crea un boton con ese texto -->
+
+<script>    
+    // querySelector(): trae el objeto input (caja de texto) de html a JavaScript
+    var input = document.querySelector("input");
+    var secreto = Math.round(Math.random()*10);
+    input.focus();      // focalize el cursor sobre el objeto, para escribir de una vez
+
+    // Funcion veririficar la esta llamando el boton.onclick de abajo    
+    function verificar(){        
+        if (parseInt(input.value) == secreto){ // value: llama esa propieda del objeto (caja de texto)
+
+            alert("Usted acertó, FELICITACIONES!!!");
+        }
+        else{
+            alert(`Usted erró, intentalo de nuevo!`);
+        }        
+        input.value = "";   // borra el dato que se encuentra en el objeto (caja de texto)
+        input.focus();      // focalize el cursor sobre el objeto, para escribir de una vez
+
+    }
+    // querySelector(): trae el objeto button de html a JavaScript
+    var boton = document.querySelector("button");
+    boton.onclick = verificar // ejecuvar la funcion verificar (llamarla sin parectesis o se ejecuta de una)
+
+</script>
