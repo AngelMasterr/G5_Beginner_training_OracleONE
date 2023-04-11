@@ -1,0 +1,44 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");       
+    
+    // colores de las barras
+    let colores = ["blue","green","yellow", "red","gray", "purple", "orange", "black"];  
+
+        // Dibujar los graficos de barras
+    function dibujarBarras (x, y, arrAño, texto){
+        pincel.strokeStyle = "lightgrey";   // strokeStyle: asigna un color de linea perimetral estandar
+        let h1 = 0;
+        let h2 = 0;
+        for (let i = 0; i < arrAño.length; i++){        
+            pincel.fillStyle = colores[i];
+
+            // barra 2009
+            pincel.fillRect(x,(y + h1),75,arrAño[i]*2)
+            h1 += arrAño[i]*2
+            // barra 2019
+            pincel.fillRect(x,(y + h2),75,arrAño[i]*2)
+            h2 += arrAño[i]*2
+
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(texto, x+5, y-10);  
+        } 
+    }
+
+    // Porcentaje de uso de los navegadores en los años 2009 y 2019
+    let arr2009 = [6, 47, 41, 3, 3];
+    let arr2019 = [81, 9, 3, 3, 4];  
+
+    dibujarBarras(50,50,arr2009,"Año 2009");
+    dibujarBarras(175,50,arr2019,"Año 2019");
+
+</script>

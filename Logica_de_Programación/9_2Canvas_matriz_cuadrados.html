@@ -8,7 +8,7 @@ y mucho más -->
 <script>
     // llamar el objeto canvas y luego el contexto de ese objeto
     var pantalla = document.querySelector("canvas");
-    var pincel = pantalla.getContext("2d");    
+    var pincel = pantalla.getContext("2d");       
     
     // pedir la cantidad de filas y columnas de la cuadricula
     let rows = parseInt(prompt("Introduza la cantidad de filas"));
@@ -25,7 +25,7 @@ y mucho más -->
     // funcion dibuja los siguiente cuadrados cada 50 pixeles en la posicion "x" y "y"
     function dibujarCuadrado(rows, cols){     
 
-        pincel.strokeStyle = "white";   // strokeStyle: asigna un color de linea perimetral 
+        pincel.strokeStyle = "white";   // strokeStyle: asigna un color de linea perimetral estandar
 
         // crear el diccionario con los colores
         let dicColors = {
@@ -37,7 +37,7 @@ y mucho más -->
             }
 
         for(let i = 0; i < rows; i++){            
-            // se llama el numero del vector colors que sirve como key de dicColors
+            // se llama el numero del vector colors que sirve como key del diccionarios dicColors
             pincel.fillStyle = dicColors[colors[i]]; // asigna un color de relleno segun el dicColors
 
             for(let j = 0; j < cols; j++){
