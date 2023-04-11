@@ -1,0 +1,52 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    
+    // pedir la cantidad de filas y columnas de la cuadricula
+    let rows = parseInt(prompt("Introduza la cantidad de filas"));
+    let cols = parseInt(prompt("Introduza la cantidad de columnas"));
+
+    // pedir los colores por filas
+    var colors = [];
+    for(let i = 0; i < rows; i++){        
+        colors.push(parseInt(prompt(`Introduza el numero del color de la fila ${i+1} \n 
+        1: amarillo, 2: azul, 3: verde, 4: rojo, 5: negro`)));
+    }
+    console.log(colors)
+
+    // funcion dibuja los siguiente cuadrados cada 50 pixeles en la posicion "x" y "y"
+    function dibujarCuadrado(rows, cols){     
+
+        pincel.strokeStyle = "white";   // strokeStyle: asigna un color de linea perimetral 
+
+        // crear el diccionario con los colores
+        let dicColors = {
+                1   : "yellow",
+                2   : "blue",
+                3   : "green",
+                4   : "red",
+                5   : "black"
+            }
+
+        for(let i = 0; i < rows; i++){            
+            // se llama el numero del vector colors que sirve como key de dicColors
+            pincel.fillStyle = dicColors[colors[i]]; // asigna un color de relleno segun el dicColors
+
+            for(let j = 0; j < cols; j++){
+                pincel.fillRect((50*j),(50*i),50,50);    
+                pincel.strokeRect((50*j),(50*i),50,50);
+            }
+        }
+    }
+
+    dibujarCuadrado(rows, cols);
+
+</script>

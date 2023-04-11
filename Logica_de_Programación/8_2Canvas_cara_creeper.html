@@ -1,0 +1,32 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="500"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    // crear la cabeza del creeper
+    pincel.fillStyle = "#096606";       // antes de dibujar es necesario asignarle un color de relleno, de lo contrario pinta en negro
+    pincel.fillRect(100,100,350,300);   // fillRect: crea un rectangulo (posición_inicio x-y, tamaño_rectangulo ancho-alto)
+    // crear ojo izquierdo
+    pincel.fillStyle = "black";         // propiedad
+    pincel.fillRect(150,160,90,90);     // funcion
+    // crear ojo derecho
+    pincel.fillStyle = "black";         // propiedad
+    pincel.fillRect(310,160,90,90);     // funcion
+    // crear nariz
+    pincel.fillStyle = "black";         // propiedad
+    pincel.fillRect(240,250,70,100);    // funcion
+    // crear diente izquierdo
+    pincel.fillStyle = "black";         // propiedad
+    pincel.fillRect(200,290,40,110);    // funcion
+    // crear diente derecho
+    pincel.fillStyle = "black";         // propiedad
+    pincel.fillRect(310,290,40,110);    // funcion   
+
+</script>

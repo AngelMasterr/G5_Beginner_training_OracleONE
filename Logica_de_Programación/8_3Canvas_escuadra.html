@@ -1,0 +1,29 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: se trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+
+    // Dibujar el triangulo externo
+    pincel.fillStyle = "green";     // antes de dibujar es necesario asignarle un color de relleno
+    pincel.beginPath();             // beginPath(): se restablecen todos los sub-patrones (sub-paths) existentes y se comienza un nuevo sub-patrón vacío
+    pincel.moveTo(50,50);           // move: ubica el pincel en las coordenadas dadas
+    pincel.lineTo(50,400);          // lineTo: dibuja una linea desde donde se ubico el pincel hasta la coordeanda dada
+    pincel.lineTo(400,400);
+    pincel.fill();                  // fill:  rellena el área contenida dentro del último camino cerrado en el canvas
+
+    // Dibujar el triangulo interno
+    pincel.fillStyle = "white";     
+    pincel.beginPath();             // beginPath(): se restablecen todos los sub-patrones (sub-paths) existentes y se comienza un nuevo sub-patrón vacío
+    pincel.moveTo(100,175);         // move: ubica el pincel en las coordenadas dadas
+    pincel.lineTo(100,350);         // lineTo: dibuja una linea desde donde se ubico el pincel hasta la coordeanda dada
+    pincel.lineTo(275,350);
+    pincel.fill();
+
+</script>

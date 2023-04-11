@@ -1,0 +1,27 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");    
+    
+    // funcion dibuja los siguiente cuadrados cada 50 pixeles en la posicion x
+    function dibujarCuadrado(n){        
+        pincel.fillStyle = "blue"; // fillStyle: asigna un color de relleno
+        pincel.strokeStyle = "black";   // strokeStyle: asigna un color de linea perimetral
+        
+        for(let i = 0; i < n; i++){
+            pincel.fillRect((50*i),0,50,50);    
+            pincel.strokeRect((50*i),0,50,50);
+        }
+    }
+
+    dibujarCuadrado(5);
+
+
+</script>
