@@ -1,0 +1,56 @@
+<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
+
+<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");   
+
+    // crear un cuadro de color gris claro
+    pincel.fillStyle = "lightgrey"; // fillStyle: asigna un color de relleno
+    pincel.fillRect(0,0,600,400)    // fillRect: crea un rectangulo
+    pincel.fillStyle = "blue";
+
+    // array de colores donde la funcion changeColor seleccionara el color
+    let colors = ["blue", "red", "green"];
+
+    // funcion que crea una alerta y da la posicion donde se clickeo
+    function clickCanvas(evento){
+        // el obejto canvas queda aprox a 8 pixeles separado del borde izquierdo y superiro de la ventana
+        // no queda en el extremo, por eso se le resta el offsetLeft y offsetTop
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+        alert(`Hizo click en la coordenad x: ${x}, y: ${y}`)
+        console.log(evento)
+    }
+    
+    // funcion para dibujar un circulo
+    function dibujarCirculo(evento){
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+
+        pincel.beginPath();        
+        pincel.arc(x,y,10,0,2*Math.PI);
+        pincel.fill();
+        console.log(`x: ${x}, y: ${y}`)
+    }
+
+    // funcion para camiar el color del circulo con click derecho
+    let n = 1
+    function changeColor(evento){        
+        pincel.fillStyle = colors[n];
+        n += 1
+        if(n == colors.length){ 
+            n = 0;
+        }
+    }
+    
+    //pantalla.onclick = clickCanvas
+    pantalla.onclick = dibujarCirculo
+    pantalla.oncontextmenu = changeColor
+
+</script>
