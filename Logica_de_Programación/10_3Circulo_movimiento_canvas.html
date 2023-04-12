@@ -1,0 +1,37 @@
+<meta charset="UTF-8"> 
+<!-- Canvas: se trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");   
+
+    // crear un cuadro de color gris claro
+    pincel.fillStyle = "lightgrey"; // fillStyle: asigna un color de relleno
+    pincel.fillRect(0,0,600,400);   // fillRect: crea un rectangulo
+   
+    function diseñarCircunferencia(x,y,radio){
+        pincel.fillStyle = "blue";
+        pincel.beginPath();         //beginPath: método que se utiliza para comenzar un nuevo trazo en un objeto Canvas
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+    
+    // funcion para que el circulo recorra el perimetro del canvas
+    let x = 20
+    let y = 20
+    function actualizarPantalla(){
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400); 
+        diseñarCircunferencia(x,y,10);
+        if(x <= 580 && y == 20) { x++; }
+        if(x == 580 && y <= 380){ y++; }
+        if(x >= 20 && y == 380) { x--; }
+        if(x == 20 && y >= 20)  { y--; }
+    }
+    //setTimeout(actualizarPantalla, 10); // llama a una función después de un retraso de tiempo específico. solo una vez
+    setInterval(actualizarPantalla,  1) // llama a una función repetidamente después de un intervalo de tiempo específico
+              
+</script>
