@@ -1,0 +1,61 @@
+<meta charset="UTF-8"> 
+<!-- Canvas: se trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
+y mucho más -->
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    // llamar el objeto canvas y luego el contexto de ese objeto
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");   
+
+    // crear un cuadro de color gris claro
+    pincel.fillStyle = "lightgrey"; // fillStyle: asigna un color de relleno
+    pincel.fillRect(0,0,600,400);   // fillRect: crea un rectangulo
+
+    var x_random;
+    var y_random;    
+    let radio = 10;
+
+    function diseñarCircunferencia(x,y,radio,color){
+        pincel.fillStyle = color;
+        pincel.beginPath();         //beginPath: método que se utiliza para comenzar un nuevo trazo en un objeto Canvas
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function resetearPantalla(){
+        pincel.fillStyle = "lightgrey"; // fillStyle: asigna un color de relleno
+        pincel.fillRect(0,0,600,400);   // fillRect: crea un rectangulo
+    }
+
+    function diseñarObjetivo(x,y){   
+        diseñarCircunferencia(x,y,(radio+20),"red");
+        diseñarCircunferencia(x,y,(radio+10),"white");
+        diseñarCircunferencia(x,y,(radio),"red");        
+    }
+
+    function actualizarPantalla(){
+        resetearPantalla();
+        x_random = Math.floor(Math.random()*600); // coordenada aleatoria en x
+        y_random = Math.floor(Math.random()*400); // coordenada aleatoria en y
+        diseñarObjetivo(x_random, y_random)
+    }
+
+    // funcion que va detectar si se dios click en el circulo rojo pequeño del objetivo
+    function disparar(evento){ 
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+
+        if ((x < x_random + radio) &&
+            (x > x_random - radio) &&
+            (y < y_random + radio) &&
+            (y > y_random - radio) ){
+                alert("TIRO CERTERO")
+            }
+    }    
+    
+    pantalla.onclick = disparar
+    setInterval(actualizarPantalla, 1000) // llama a una función repetidamente después de un intervalo de tiempo específico
+    
+    //setTimeout(actualizarPantalla, 10); // llama a una función después de un retraso de tiempo específico. solo una vez        
+</script>
