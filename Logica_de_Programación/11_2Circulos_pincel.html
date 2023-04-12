@@ -1,67 +1,94 @@
-<!-- <meta charset="UTF-8"> por ahora no vamos usar caracteres -->
-
-<!-- Canvas: e trata de una "lienzo" en blanco donde se pueden crear formas, líneas, curvas, texto, imágenes 
-y mucho más -->
+<meta charset="UTF-8">
 
 <canvas width="600" height="400"> </canvas>
 
 <script>
     // llamar el objeto canvas y luego el contexto de ese objeto
     var pantalla = document.querySelector("canvas");
-    var pincel = pantalla.getContext("2d");   
+    var pincel = pantalla.getContext("2d");     
 
-    // crear un cuadro de color gris claro
+    // crear un cuadro de color gris claro en todo el canvas
     pincel.fillStyle = "lightgrey"; // fillStyle: asigna un color de relleno
-    pincel.fillRect(0,0,600,400)    // fillRect: crea un rectangulo    
-    pincel.fillStyle = "blue";
-    var puedoDibujar = false;
+    pincel.fillRect(0,0,600,400);   // fillRect: crea un rectangulo      
 
-    // array de colores donde la funcion changeColor seleccionara el color
-    let colors = ["blue", "red", "green"];
 
-    // funcion que crea una alerta y da la posicion donde se clickeo
-    function clickCanvas(evento){
-        // el obejto canvas queda aprox a 8 pixeles separado del borde izquierdo y superiro de la ventana
-        // no queda en el extremo, por eso se le resta el offsetLeft y offsetTop
-        let x = evento.pageX - pantalla.offsetLeft;
-        let y = evento.pageY - pantalla.offsetTop;
-        alert(`Hizo click en la coordenad x: ${x}, y: ${y}`)
-        console.log(evento)
+    // array de colores donde la funcion selecColor seleccionara el color
+    let colors = ["blue", "red", "green", "yellow"];
+            
+    // calcular las dimensiones de la paleta de colores
+    let anchoPaleta = 50 * (colors.length + 1);
+    let altoPaleta = 50; 
+    // crear la paleta de colores en el canvas
+    for(let i = 0; i < colors.length; i++){
+        pincel.fillStyle = colors[i];       
+        pincel.fillRect(50*i,0,48,48);        
     }
-    
+    // crear el ultimo cuadro de color blanco que va servir para borrar todo lo dibujado    
+    pincel.fillStyle = "white";                 
+    pincel.fillRect((anchoPaleta-50),0,48,48);
+    // crear el texto "CLEAR" sobre el cuadro blanco
+    pincel.font="12px Arial";
+    pincel.fillStyle="black";
+    pincel.fillText("CLEAR", anchoPaleta-47, 27);
+    pincel.fillStyle = "blue";
+
+    // Definir las áreas del canvas que se pueden pintar
+    pincel.beginPath(); // restablece todos los sub-patrones (sub-paths) existentes y se comienza un nuevo sub-patrón vacío
+    pincel.rect(anchoPaleta, 0, 600-anchoPaleta, altoPaleta);
+    pincel.rect(0, altoPaleta, 600, 400-altoPaleta);
+    pincel.clip(); 
+
     // funcion para dibujar un circulo
+    let puedoDibujar = false;
     function dibujarCirculo(evento){
-
+        // se crea el if para controlar cuando puede dibujar los circulos - puedeDibujar = true o false
         if(puedoDibujar){
-
             let x = evento.pageX - pantalla.offsetLeft;
             let y = evento.pageY - pantalla.offsetTop;
-
-            pincel.beginPath();        
+            
+            pincel.beginPath();     
             pincel.arc(x,y,10,0,2*Math.PI);
-            pincel.fill();
-            console.log(`x: ${x}, y: ${y}`)
+            pincel.fill();                   
         }
+    }    
+    
+    // funcion para seleccionar el color haciendo click en la paleta de colores
+    function selecColor(evento){     
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+        if (x < anchoPaleta && y < altoPaleta){ // compruesa que el click esta sobre la paleta de colores
+            let col = Math.floor((x+1)/50); 
+            pincel.fillStyle = colors[col];
+            console.log(x);
+            // comprobar si se dios click en el cuadro blanco (clear)
+            if ( x > anchoPaleta-50){
+                pincel.fillStyle = "lightgrey"; 
+                pincel.fillRect(0,0,600,400);
+                pincel.fillStyle = "blue";
+            }
+        }        
     }
-
     // funcion para cambiar el color del circulo con click derecho
-    let n = 1
+    /*let n = 1
     function changeColor(evento){        
         pincel.fillStyle = colors[n];
-        n += 1
+        n += 1;
         if(n == colors.length){ 
             n = 0;
         }
-    }
+    }*/
     
-    // cuando el mouse este oprimido cambia la varaible a true y cuando se suelte a false
+    // cuando el mouse este oprimido cambia la varaible "puedoDibujar" a true y cuando se suelte a false
     pantalla.onmousedown = function(){puedoDibujar = true}  
     pantalla.onmouseup = function(){puedoDibujar = false}  
 
     // mientras el mouse se este moviendo, ejectura la función dibujarCirculo
-    pantalla.onmousemove = dibujarCirculo
+    pantalla.onmousemove = dibujarCirculo    
 
-    // llama la funcion para cambiar el color con el click derecho
-    pantalla.oncontextmenu = changeColor
+    // llamar la funcion selecColor cuando se clickee encima de la paleta de colores
+    pantalla.onclick = selecColor
+
+    // llamar la funcion para cambiar el color con el click derecho
+    //pantalla.oncontextmenu = changeColor
 
 </script>
