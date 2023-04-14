@@ -1,6 +1,41 @@
-p{  /* estilo de los parrafos */
+
+body{ /* estilo de todo el cuerpo <body> */
+    background: #bed8ff;        /* color de fondo de todo el body */
+}
+
+h1{ /* estilo de los titulos <h1> */
+    text-align: center;            /* alinea el texto al centro  */   
+    background: #eca25c;         /* color de fondo  */
+}
+
+p{  /* estilo de los parrafos <p> */
     text-align: justify;
 }
-h1{ /* estilo de los titulos */
-    text-align: center;
+
+strong{ /* estilo de la negrita */
+    color: brown;
+}
+
+em strong{ /* estilo de la negrita que esta dentro del estilo cursiva */
+    color: blue;
+}
+
+#servicio{ /* propiedad especial para un parrafo alque llamamod id="servicio" */
+    font-size: 20px;
+}
+
+.image-container { /* contenedor de la image */
+    width: 98%; /* ancho del tamaño del contenedor */
+    height: 250px; /* alto del tamaño del contenedor */
+    border: 1px solid #ccc;
+    padding: 10px;  /* borde que se separa la imagen del contenedor */
+    overflow: hidden; /* recorta cualquier contenido que se salga del contenedor */
+    display: flex; /* establece un contenedor de tipo flexbox */
+    /*align-items: bottom; /* centra verticalmente el contenido del contenedor */
+}
+
+.image-container img {
+    width: 100%; /* ajusta el ancho de la imagen al 100% del contenedor */    
+    object-fit: cover; /* ajusta la imagen para cubrir todo el contenedor */    
+    object-position: center -50px; /* alinea la imagen en el centro horizontalmente, en la parte superior del contenedor, con un desplazamiento de 50px hacia abajo */  
 }

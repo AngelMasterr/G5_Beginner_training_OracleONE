@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<canvas id="canvas1"width="600" height="400" style="border-style:solid" >
+</canvas>
+<script>
+
+    let canvas=document.getElementById("canvas1");
+    let ctx=canvas.getContext("2d");
+    ctx.fillStyle="blue";
+    ctx.fillRect(0,0,200,200);
+    ctx.fillStyle="red";
+    ctx.fillRect(0,200,600,200);
+    ctx.translate(100,100);    
+
+    for(let i=0;i<5;i++){
+        if(i!=0){            
+            ctx.rotate(2*Math.PI/5);            
+        }     
+     
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(25*Math.cos(-3*Math.PI/10),25*Math.sin(-3*Math.PI/10));
+        ctx.lineTo(25*Math.cos(-7*Math.PI/10),25*Math.sin(-7*Math.PI/10));
+        ctx.fillStyle="white";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(25*Math.cos(-3*Math.PI/10),25*Math.sin(-3*Math.PI/10));
+        ctx.lineTo(0,-50);
+        ctx.lineTo(25*Math.cos(-7*Math.PI/10),25*Math.sin(-7*Math.PI/10));
+        ctx.fillStyle="white";
+        ctx.fill();
+        ctx.strokeStyle="white";
+        ctx.stroke();
+    }
+
+</script>
