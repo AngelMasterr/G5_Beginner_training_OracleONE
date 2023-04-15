@@ -3,9 +3,12 @@ body{ /* estilo de todo el cuerpo <body> */
     background: #bed8ff;        /* color de fondo de todo el body */
 }
 
-h1{ /* estilo de los titulos <h1> */
-    text-align: center;            /* alinea el texto al centro  */   
-    background: #eca25c;         /* color de fondo  */
+.tituloPrincipal{
+    padding-left: 15%;
+}
+
+.centrarTitulo{
+    text-align: center;
 }
 
 p{  /* estilo de los parrafos <p> */
@@ -24,7 +27,20 @@ em strong{ /* estilo de la negrita que esta dentro del estilo cursiva */
     font-size: 20px;
 }
 
-.image-container { /* contenedor de la image */
+.principal{
+    background: #eee596;
+}
+
+.diferenciales{
+    background: #ffffff;
+    padding: 30px;
+}
+
+.items{ /* a las listas <li> le creamos un clase="items" */
+    font-style: italic;
+}
+
+.image-container { /* contenedor de la imagen */
     width: 98%; /* ancho del tamaño del contenedor */
     height: 250px; /* alto del tamaño del contenedor */
     border: 1px solid #ccc;
@@ -34,8 +50,19 @@ em strong{ /* estilo de la negrita que esta dentro del estilo cursiva */
     /*align-items: bottom; /* centra verticalmente el contenido del contenedor */
 }
 
-.image-container img {
+.image-container img { /* caracteristicas de la imagen */
     width: 100%; /* ajusta el ancho de la imagen al 100% del contenedor */    
     object-fit: cover; /* ajusta la imagen para cubrir todo el contenedor */    
     object-position: center -50px; /* alinea la imagen en el centro horizontalmente, en la parte superior del contenedor, con un desplazamiento de 50px hacia abajo */  
+}
+
+ul{
+    display: inline-block; /* hace que el bloque de la lista no ocupe todo el ancho de la pagina, solo el andho de su contenido*/ 
+    vertical-align: top; /* alinea la lista en la parte superiro del bloque*/
+    width: 20%;  /* la lista ocupa el 20% del ancho de la ventana */
+    margin-right: 15%; /* dejar un margen de espácio vacio al lado derecho del bloque lista */
+}
+
+.imagenDiferencial{
+    width: 50%;
 }
