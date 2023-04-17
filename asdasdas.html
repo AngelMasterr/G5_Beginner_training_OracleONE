@@ -1,43 +1,31 @@
-<canvas width="600" height="400"></canvas>
+<canvas id="lienzo" width="600" height="400" style="border: 2px solid #333; border-radius: 10px;"></canvas>
 
 <script>
+  const lienzo = document.getElementById("lienzo");
+  const contexto = lienzo.getContext("2d");
+  const colores = ["#1abc9c", "#e74c3c", "#3498db"];
+  let indiceColorActual = 0; // comienza con azul turquesa
 
-    function dibujarRectangulo(x, y, base, altura, color) {
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
+  function dibujarCirculo({ pageX, pageY }) {
+    const x = pageX - lienzo.offsetLeft;
+    const y = pageY - lienzo.offsetTop;
 
-        pincel.fillStyle=color;
-        pincel.fillRect(x,y, base, altura);
-        pincel.strokeStyle="black";
-        pincel.strokeRect(x,y, base, altura);
-    }
+    contexto.fillStyle = colores[indiceColorActual];
+    contexto.beginPath();
+    contexto.arc(x, y, 10, 0, 2 * Math.PI);
+    contexto.fill();
 
-    function escribirTexto(x , y, texto) {
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
+    console.log(`${x},${y}`);
+  }
 
-        pincel.font="15px Georgia";
-        pincel.fillStyle="black";
-        pincel.fillText(texto, x, y);
-    }
+  function asignarEventos() {
+    lienzo.addEventListener("click", dibujarCirculo);
+    lienzo.addEventListener("contextmenu", (event) => {
+      indiceColorActual = (indiceColorActual + 1) % colores.length;
+      event.preventDefault();
+    });
+  }
 
-    function dibujarBarra(x, y, serie, colores, texto) {
-
-        escribirTexto(x, y - 10, texto);
-
-        var sumaAltura = 0;
-        for (var i = 0; i < serie.length; i++) {
-            var altura = serie[i];
-            dibujarRectangulo(x, y + sumaAltura, 50, altura, colores[i]);
-            sumaAltura = sumaAltura + altura;
-        }
-    }
-
-    var colores = ["blue","green","yellow", "red","gray"];
-    var serie2009 = [6,47,41,3,3];
-    var serie2019 = [81,9,3,3,4];
-
-    dibujarBarra(50, 50, serie2009, colores, "2009");
-    dibujarBarra(150, 50, serie2019, colores, "2019");
+  asignarEventos();
 
 </script>
