@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--es una declaración importante que ayuda a garantizar que el código HTML se interprete correctamente en los navegadores web.-->
+
+<!-- html: define el inicio de la estructura y el contenido de un documento HTML-->
+<html lang="es">
+    <!-- para que el navegador reconozca que es una pagina en español-->
+
+    <!-- CSS: definir la presentación visual de un documento HTML-->
+    <head>
+        <!-- Etiquetas informativas -->
+
+        <meta charset="UTF-8" />
+        <!--garantiza que los navegadores web muestren correctamente los caracteres especiales y acentos de cualquier idioma en la página web.-->
+        <title>Barbería Alura</title>
+        <!-- titulo de la pagina, se muestra en la pestaña del navegador -->
+
+        <link rel="stylesheet" href="2_2style.css" />
+        <!--llama el archivo "2_2style.css" el cual tiene los estilos de <p> y <h1>-->
+    </head>
+
+    <body>
+        <!-- Etiquetas de contenido -->
+
+        <header>
+            <!-- etiqueta que se usa solo para encabezados-->
+            <h1 class="tituloPrincipal">Barberia Alura</h1>
+        </header>
+
+        <div class="image-container">
+            <!-- insertar una imagen -->
+            <img src="imagenes/barber-g06c8bb1b0_1280.jpg" alt="imgane de una barberia" />
+        </div>
+
+        <div class="principal">
+            <h1>Sobre la Barbería ALURA</h1>
+
+            <p>Ubicada en el corazon de Medellín, Colombia, la <strong>Barbería ALURA</strong> se enfoca en proporcionar una experiencia de corte de cabello y afeitado de alta calidad para hombres de todas las edades. La misión de la barbería es crear un ambiente acogedor y relajante para los clientes, donde puedan disfrutar de un servicio personalizado y detallado.</p>
+
+            <p id="servicio">
+                <em>Se ofrecen servicios de corte de cabello, afeitado de barba y patillas, arreglo de cejas y masajes faciales.<strong> Los barberos están altamente capacitados y utilizan técnicas modernas y tradicionales para brindar un resultado excepcional.</strong></em>
+            </p>
+
+            <p>Además, la barbería cuenta con una variedad de productos para el cuidado del cabello y la barba, como aceites, cremas, champús y acondicionadores, disponibles para su venta. En general, la barbería se enfoca en crear una experiencia de cuidado personal completa y satisfactoria para sus clientes.</p>
+        </div>
+
+        <div class="diferenciales">
+            <h2 class="centrarTitulo">Diferenciales</h2>
+            <!-- <ul>: Indica que se le va a pasar una lista-->
+            <ul>
+                <!-- <li> indica que esto se muestre como una etiqueta -->
+                <li class="items">Atención personalizada a los clientes</li>
+                <li class="items">Espacio diferenciado</li>
+                <li class="items">Localización</li>
+                <li class="items">Profesionales destacados</li>
+            </ul>
+
+            <img src="imagenes/barbershop-gf7632a0de_1280.jpg" class="imagenDiferencial" />
+        </div>
+    </body>
+</html>
+<!--define el final de la estructura y el contenido de un documento HTML-->

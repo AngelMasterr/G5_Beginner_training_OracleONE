@@ -1,0 +1,19 @@
+header{
+    background-color:linen;
+}
+nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+nav li{
+    display: inline; /* la listas ocupa solo su ancho, ya no ocupa todo la liena de la pagina */
+    margin: 0 0 0 15px; /*margenes: top, down, right, left */
+}
+nav a{
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
