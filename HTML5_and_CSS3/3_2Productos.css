@@ -67,3 +67,14 @@ nav a:hover{ /* cambia el color cuando el mouse pasa por encima de las palabras 
     font-weight: bold;
     margin-top: 10px;
 }
+
+footer{
+    text-align: center;
+    background-color: black;
+    padding: 30px;
+}
+.copyright{
+    color: white; 
+    font-size: 12px;
+    margin-top: 15px;
+}
