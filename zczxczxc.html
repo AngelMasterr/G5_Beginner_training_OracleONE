@@ -1,23 +1,30 @@
-<!DOCTYPE html>
+<canvas width="600"height="400"></canvas>
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title> Barberia Alura </title>
-        <link rel="stylesheet" href="style.css">
+<script>
 
-    </head>
-    <body>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
 
-        <img src="HTML5_and_CSS3/imagenes/barbershop-gf7632a0de_1280.jpg">
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
 
-        <h1>Sobre la Barbería Alura </h1>
+    function exibirAlerta(evento){ // la funcion no neceita ese parametro console.log
+        var x = evento.pageX - pantalla.offsetleft;
+        var y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        alert(x + "," + y);
+    }
 
+    function dibujarCirculo(evento){ 
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        
+        pincel.fillStyle ="blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x +","+ y);
+    }
 
-        <p>Ubicada en el corazón de la ciudad, la <strong>Barbería Alura</strong> trae para el mercado lo que hay de mejor para su cabello y barba. Fundada en 2020, la Barbería Alura ya es destaque en la ciudad y conquista nuevos clientes diariamente. </p>
-        <p> <em>  Nuestra misión es:<strong> "Proporcionar autoestima y calidad de vida a nuestros clientes".</strong></em> </p>
-        <p>Ofrecemos profesionales experimentados que están constantemente observando los cambios y movimiento en el mundo de la moda, para así ofrecer a nuestros clientes las últimas tendencias. </p>
-        <p>El atendimiento posee un padrón de excelencia y agilidad, garantizando calidad y satisfacción de nuestros clientes. </p>
-
-</body>
-</html>
+    pantalla.onclick = dibujarCirculo;
+</script>

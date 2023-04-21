@@ -30,8 +30,9 @@ nav a:hover{ /* cambia el color cuando el mouse pasa por encima de las palabras 
 }
 .productos{
     display: flex;  /* permite que el contenido se pueda desplazar al centro*/
-    justify-content: center;   
+    height: 400px;           
     width: 960px;
+    justify-content: center;
     margin: 0 auto; 
     padding: 50px;
 }
