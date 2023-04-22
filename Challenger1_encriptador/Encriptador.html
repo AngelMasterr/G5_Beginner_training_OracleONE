@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <link rel="stylesheet" href="style.css">
+        <!-- tipografia referenciada desde google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+        <title>Encriptador</title>
+    </head>
+<body>
+    <header>
+        <img class="logo_a" src="imagenes/logo_a.png" alt="logo_a">
+    </header>
+    <main class="cuerpo_principal">
+        <section class="seccion_1">
+            <!-- input dinamico -->
+            <div class="contenedor_caja_texto1">                 
+                <input id="inp_text" type="text" class="cont_caja1" autocomplete="off" placeholder=" ">
+                <label for="inp_text">Ingrese el texto aquí</label>
+            </div>
+
+            <div class="alerta">
+                <img src="imagenes/exclamation-circle-fill.png" alt="logo_alerta">
+                <p>Solo letras minusculas y sin acentos</p>
+            </div>
+            <div class="contenedor_botones">
+                <button class="boton_encriptar">Encriptar</button>
+                <button class="boton_desencriptar">Desencriptar</button>
+                <button class="boton_limpiar">Limpiar</button>   
+            </div>
+        </section>
+        <section class="seccion_2">
+            <div class="contenedor_dibujos_hackers">
+                <img src="imagenes/hacker.png" alt="imagen_hacker3">
+                <img src="imagenes/hacker-friend2.gif" alt="imagen_hacker3">
+            </div>
+            <div class="contenedor_parrafo">
+                <h3>Ningun mensaje fue encontrado</h3>
+                <p>Ingresa el texto que deseas encriptar o desencriptar</p>
+            </div>
+            <div class="contenedor_copiar">
+                <button class="boton_copiar">Copiar</button>
+            </div>
+            <div class="resultado">
+                <p class="texto_resultado"></p>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

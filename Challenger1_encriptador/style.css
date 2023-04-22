@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+body{    
+    background-color: #f4f4fc;
+}
+header{
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+.logo_a{
+    margin: 10px auto;
+    animation:rotate-center 1s 1;    
+    animation-delay: 3s; /* retrasa la animación 5 segundos */    
+} 
+.logo_a:hover{   
+    transform: rotate(0);    
+    animation:rotate-center 1s infinite;
+}
+@keyframes rotate-center{
+    0%{transform:rotate(0);}    
+    100%{transform:rotate(360deg);}
+}
