@@ -7,31 +7,50 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     background-color: #f4f4fc;
 }
-/* solo contiene la imagen class logo_a*/
+
+/* contiene encabezado class text_titulo - imagen: logo_a*/
 header {
-    display: flex;
+    position: relative;
+    display: grid;
     width: 100%;
-    height: 70px;
+    height: 80px;
+    padding: 20px 10px;
+}
+.text_titulo {
+    margin-top: 4px;
+    margin-left: 20px;
+    font-size: 1.6rem;
+    color: #41667e;
+    animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+/* funcion aparezca titulo desvanecido*/
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
 
 /* Centrar y darle animacion de rotacion al logo de alura "a"*/
 .logo_a {
-    margin: 10px auto;
-    animation: rotate-center 1s 1;
-    animation-delay: 3s;
+    position: absolute;
+    justify-self: center;
+    margin-top: 13px;
+    width: 2rem;
+    animation: rotacion 1s 1 3s;
+    transition: 0.8s linear 0s;
 }
 .logo_a:hover {
-    transform: rotate(0);
-    animation: rotate-center 1s infinite;
+    transform: rotate(720deg);
 }
-@keyframes rotate-center {
-    0% {
-        transform: rotate(0);
-    }
+@keyframes rotacion {
     100% {
         transform: rotate(360deg);
     }
@@ -57,7 +76,7 @@ header {
     padding: 1.25rem;
     background: white;
 }
-/* Change border when input focus*/
+/* Cambiar el borde cuando este el input focus*/
 .cont_caja1:hover {
     border-color: #b3cfd8;
 }
