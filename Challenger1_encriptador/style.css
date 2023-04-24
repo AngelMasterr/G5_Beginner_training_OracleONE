@@ -63,7 +63,7 @@ header {
     height: 3rem;
     margin-left: 20px;
 }
-.cont_caja1 {
+.caja_texto1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -77,14 +77,14 @@ header {
     background: white;
 }
 /* Cambiar el borde cuando este el input focus*/
-.cont_caja1:hover {
+.caja_texto1:hover {
     border-color: #b3cfd8;
 }
-.cont_caja1:focus {
+.caja_texto1:focus {
     border-color: #5f8aa7;
 }
 /* crear el label dentro de la caja de texto*/
-.label_caja1 {
+.label_caja_texto1 {
     position: absolute;
     left: 1rem;
     top: 0.8rem;
@@ -97,8 +97,8 @@ header {
 }
 /*Cuando el curosor este en la caja de texto, reducir el tamaño de la etiqueta y mover hacia arriba
 Mantener el estado de la etiqueta cuando el contenido está en el campo de entrada*/
-.cont_caja1:focus ~ .label_caja1,
-.cont_caja1:not(:placeholder-shown).cont_caja1:not(:focus) ~ .label_caja1 {
+.caja_texto1:focus ~ .label_caja_texto1,
+.caja_texto1:not(:placeholder-shown).caja_texto1:not(:focus) ~ .label_caja_texto1 {
     top: -0.5rem;
     font-size: 0.75rem;
     left: 0.9rem;
