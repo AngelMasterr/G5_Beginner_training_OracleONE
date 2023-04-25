@@ -56,7 +56,7 @@ header {
     }
 }
 
-main {
+.seccion_1 {
     position: relative;
     display: flex;
     width: 100%;
@@ -66,7 +66,7 @@ main {
 
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
-    position: relative;
+    position: absolute;
     width: 20rem;
     height: 3rem;
     margin-left: 20px;
@@ -79,7 +79,8 @@ main {
     height: 100%;
     border: 2px solid #e1e5ee;
     border-radius: 0.5rem;
-    color: #000000;
+    color: #0a3871;
+    font-weight: 400;
     outline: none;
     padding: 1.25rem;
     background: white;
