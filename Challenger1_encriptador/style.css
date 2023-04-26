@@ -29,7 +29,7 @@ header {
 .text_titulo {
     margin-top: 12px;
     margin-left: 7.5%;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #41667e;
     animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
@@ -72,12 +72,11 @@ header {
 
 .seccion_1 {
     padding-left: 8%;
-    padding-right: 5%;
 }
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
     position: relative;
-    height: 3rem;
+    height: 3.5rem;
 }
 .caja_texto1 {
     width: 100%;
@@ -85,6 +84,7 @@ header {
     border: 2px solid #e1e5ee;
     border-radius: 0.5rem;
     color: #0a3871;
+    font-size: 1.3rem;
     font-weight: 400;
     outline: none;
     padding: 1.25rem;
@@ -101,9 +101,10 @@ header {
 .label_caja_texto1 {
     position: absolute;
     left: 1rem;
-    top: 0.8rem;
+    top: 1rem;
     padding: 0 0.5rem;
-    color: #726e6e;
+    color: #888484;
+    font-size: 1.1rem;
     cursor: text;
     transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
     background-color: #ffffff;
@@ -118,8 +119,37 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     left: 0.9rem;
 }
 
-.seccion_2 {
+.alerta {
     position: relative;
+    display: flex;
+    top: 350px;
+    align-items: center;
+    gap: 10px;
+}
+.contenedor_botones {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    top: 360px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.seccion_2 {
+    padding-left: 4%;
+}
+.contenedor_seccion_2 {
+    text-align: center;
+    margin-right: 20px;
+    border: 2px solid #5f8aa7;
+    border-radius: 10px;
+}
+.contenedor_dibujos_hackers {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedor_dibujos_hackers img {
+    width: 100%;
 }
 
 /* RESPONSIVE */
