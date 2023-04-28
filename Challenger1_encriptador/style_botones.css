@@ -1,4 +1,4 @@
-.boton_seccion1 {
+button {
     position: relative;
     display: inline-block;
     transition: all 0.2s ease-in;
@@ -12,11 +12,11 @@
     border: 1px solid #e8e8e8;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
-.boton_seccion1:active {
+button:active {
     box-shadow: inset 4px 4px 12px #ffffff;
     transform: scale(0.95);
 }
-.boton_seccion1::before {
+button::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -30,7 +30,7 @@
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
 }
-.boton_seccion1::after {
+button::after {
     content: '';
     position: absolute;
     left: 55%;
@@ -44,17 +44,17 @@
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
 }
-.boton_seccion1:hover {
+button:hover {
     color: #ffffff;
-    border: 1px solid #5f8aa7;
+    border: 1px solid #009087;
 }
-.boton_seccion1:hover::before {
+button:hover::before {
     top: -35%;
-    background-color: #5f8aa7;
+    background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
-.boton_seccion1:hover::after {
+button:hover::after {
     top: -45%;
-    background-color: #5f8aa7;
+    background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
