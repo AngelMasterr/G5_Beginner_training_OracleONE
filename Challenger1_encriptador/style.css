@@ -7,12 +7,6 @@
     margin: 0;
     padding: 0;
 }
-/* Definir la orientacion de las clases col- */
-[class*='col-'] {
-    float: left;
-    padding-left: 0px;
-    padding-right: 0px;
-}
 
 body {
     background-color: #f4f4fc;
@@ -25,12 +19,12 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 80px;
+    height: 5rem;
 }
 .text_titulo {
     position: absolute;
     left: 5.2%;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: #41667e;
     animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
@@ -48,7 +42,7 @@ header {
 
 /* Centrar y darle animacion de rotacion al logo de alura "a"*/
 .logo_a {
-    width: 1.8rem;
+    width: 1.7rem;
     animation: rotacion 1s 1 3s;
     transition: 0.8s linear 0s;
 }
@@ -64,6 +58,7 @@ header {
 .cuerpo_principal {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
 }
@@ -71,6 +66,10 @@ header {
 .seccion_1 {
     padding-left: 5%;
     padding-right: 2%;
+    height: 30rem;
+    width: 60%;
+}
+@media only screen and (max-width: 600px) {
 }
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
@@ -128,106 +127,90 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 .contenedor_botones {
     position: relative;
     display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr;
     top: 360px;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between;
+    grid-gap: 15px;
 }
 
 .seccion_2 {
     padding-right: 5%;
     padding-left: 2%;
+    width: 40%;
+    height: 480px;
 }
 .contenedor_seccion_2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
-    height: 480px;
+    height: 100%;
     border-radius: 1rem;
     padding: 15px;
     background-color: #ffffff;
     box-shadow: 6px 6px 12px #c5c5c5;
     font-size: 0.2rem;
 }
-
 .contenedor_dibujo_hacker img {
     width: 100%;
     max-width: 320px;
 }
 
-/* RESPONSIVE */
-/* For mobile phones: */
-[class*='col-'] {
-    width: 100%;
-}
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-s-1 {
-        width: 10%;
-    }
-    .col-s-2 {
-        width: 20%;
-    }
-    .col-s-3 {
-        width: 30%;
-    }
-    .col-s-4 {
-        width: 40%;
-    }
-    .col-s-5 {
-        width: 50%;
-    }
-    .col-s-6 {
-        width: 60%;
-    }
-    .col-s-7 {
-        width: 70%;
-    }
-    .col-s-8 {
-        width: 80%;
-    }
-    .col-s-9 {
-        width: 90%;
-    }
-    .col-s-10 {
-        width: 100%;
-    }
-}
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {
-        width: 10%;
-    }
-    .col-2 {
-        width: 20%;
-    }
-    .col-3 {
-        width: 30%;
-    }
-    .col-4 {
-        width: 40%;
-    }
-    .col-5 {
-        width: 50%;
-    }
-    .col-6 {
-        width: 60%;
-    }
-    .col-7 {
-        width: 70%;
-    }
-    .col-8 {
-        width: 80%;
-    }
-    .col-9 {
-        width: 90%;
-    }
-    .col-10 {
-        width: 100%;
-    }
-}
-
 .ocultar {
     display: none;
+}
+
+/* RESPONSIVE */
+/* TABLETS */
+@media only screen and (max-width: 768px) {
+    /* SECCION 1 */
+    .contenedor_botones {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        top: 300px;
+    }
+    .boton_encriptar {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .alerta {
+        top: 290px;
+    }
+}
+/* SMALL TABLETS */
+@media only screen and (max-width: 600px) {
+    /* SECCION 1 */
+    .seccion_1 {
+        width: 100%;
+        padding-right: 5%;
+    }
+    .contenedor_botones {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        top: 14.375rem;
+        grid-gap: 10px;
+    }
+    .boton_encriptar {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .alerta {
+        top: 220px;
+    }
+    /* SECCION 2 */
+    .seccion_2 {
+        width: 100%;
+        padding-left: 5%;
+        height: 350px;
+    }
+    .contenedor_dibujo_hacker img {
+        max-width: 220px;
+    }
+}
+/* SMART PHONE */
+@media only screen and (max-width: 440px) {
+    * {
+        font-size: 13px;
+    }
 }
