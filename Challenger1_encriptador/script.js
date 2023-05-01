@@ -1,60 +1,59 @@
-var caja_texto1 = document.querySelector('.caja_texto1');
-var boton_encriptar = document.querySelector('.boton_encriptar');
-var boton_desencriptar = document.querySelector('.boton_desencriptar');
-var boton_limpiar = document.querySelector('.boton_limpiar');
-var boton_copiar = document.querySelector('.boton_copiar');
-var img_hacker1 = document.getElementById('img_hacker1');
+// Obtener todos los elementos html
+const caja_texto1 = document.querySelector('.caja_texto1');
+const texto_resultado = document.querySelector('.texto_resultado');
+const boton_encriptar = document.querySelector('.boton_encriptar');
+const boton_desencriptar = document.querySelector('.boton_desencriptar');
+const boton_limpiar = document.querySelector('.boton_limpiar');
+const boton_copiar = document.querySelector('.boton_copiar');
+let img_hacker1 = document.getElementById('img_hacker1');
 
+// Crear las funciones
 function encriptar() {
-    let texto = caja_texto1.value;
+    let texto = String(caja_texto1.value);
     let texto_encriptado = '';
 
-    for (let i of texto) {
-        if (i == 'a') {
-            texto_encriptado += 'ai';
-        } else if (i == 'e') {
-            texto_encriptado += 'enter';
-        } else if (i == 'i') {
-            texto_encriptado += 'imes';
-        } else if (i == 'o') {
-            texto_encriptado += 'over';
-        } else if (i == 'u') {
-            texto_encriptado += 'ufat';
-        } else {
-            texto_encriptado += i;
-        }
-    }
+    let obj_letters = {
+        a: 'ai',
+        e: 'enter',
+        i: 'imes',
+        o: 'over',
+        u: 'ufat',
+    };
+    texto_encriptado = texto.replace(/a|e|i|o|u/g, function (letters) {
+        return obj_letters[letters];
+    });
     console.log(texto_encriptado);
-    return texto_encriptado;
+    texto_resultado.value = 'coadass';
 }
 
 function desencriptar() {
-    let texto = caja_texto1.value;
-    let texto_desencriptado = '';
+    let texto = String(caja_texto1.value);
+    let texto_encriptado = '';
 
-    for (let i = 0; i < texto.length; i++) {
-        if (texto[i] == 'a') {
-            texto_desencriptado += 'a';
-            i += 1;
-        } else if (texto[i] == 'e') {
-            texto_desencriptado += 'e';
-            i += 4;
-        } else if (texto[i] == 'i') {
-            texto_desencriptado += 'i';
-            i += 3;
-        } else if (texto[i] == 'o') {
-            texto_desencriptado += 'o';
-            i += 3;
-        } else if (texto[i] == 'u') {
-            texto_desencriptado += 'u';
-            i += 3;
-        } else {
-            texto_desencriptado += texto[i];
-        }
-    }
-    console.log(texto_desencriptado);
-    return texto_desencriptado;
+    let obj_letters = {
+        ai: 'a',
+        enter: 'e',
+        imes: 'i',
+        over: 'o',
+        ufat: 'u',
+    };
+    texto_encriptado = texto.replace(/ai|enter|imes|over|ufat/g, function (letters) {
+        return obj_letters[letters];
+    });
+    console.log(texto_encriptado);
+    texto_resultado.value = texto_encriptado;
+}
+
+function copiar_palabra_encriptada() {
+    texto_resultado.textContent;
+    navigator.clipboard.writeText(texto_resultado);
+}
+
+function limpiar_caja_texto() {
+    caja_texto1.value = '';
 }
 
 boton_encriptar.addEventListener('click', encriptar);
 boton_desencriptar.addEventListener('click', desencriptar);
+boton_copiar.addEventListener('click', copiar_palabra_encriptada);
+boton_limpiar.addEventListener('click', limpiar_caja_texto);
