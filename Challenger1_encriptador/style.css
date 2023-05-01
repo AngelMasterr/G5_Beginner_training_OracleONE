@@ -196,7 +196,7 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
         grid-column-end: 2;
     }
     .alerta {
-        top: 220px;
+        top: 13.75rem;
     }
     /* SECCION 2 */
     .seccion_2 {
