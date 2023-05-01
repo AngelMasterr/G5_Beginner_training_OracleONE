@@ -11,7 +11,6 @@ let img_hacker1 = document.getElementById('img_hacker1');
 function encriptar() {
     let texto = String(caja_texto1.value);
     let texto_encriptado = '';
-
     let obj_letters = {
         a: 'ai',
         e: 'enter',
@@ -23,13 +22,12 @@ function encriptar() {
         return obj_letters[letters];
     });
     console.log(texto_encriptado);
-    texto_resultado.value = 'coadass';
+    texto_resultado.textContent = texto_encriptado;
 }
 
 function desencriptar() {
     let texto = String(caja_texto1.value);
     let texto_encriptado = '';
-
     let obj_letters = {
         ai: 'a',
         enter: 'e',
@@ -41,17 +39,27 @@ function desencriptar() {
         return obj_letters[letters];
     });
     console.log(texto_encriptado);
-    texto_resultado.value = texto_encriptado;
+    texto_resultado.textContent = texto_encriptado;
 }
 
 function copiar_palabra_encriptada() {
-    texto_resultado.textContent;
-    navigator.clipboard.writeText(texto_resultado);
+    let copy_text = texto_resultado.textContent;
+    navigator.clipboard.writeText(copy_text);
+    caja_texto1.select();
+    caja_texto1.focus();
 }
 
 function limpiar_caja_texto() {
     caja_texto1.value = '';
 }
+
+// Detectar que solo introduzca letras minusculas y sin acentos
+caja_texto1.addEventListener('input', function () {
+    let text_input = caja_texto1.value;
+    // Convertir a minúsculas y quitar caracteres no permitidos
+    text_input = text_input.toLowerCase().replace(/[^a-z\s]/g, '');
+    caja_texto1.value = text_input;
+});
 
 boton_encriptar.addEventListener('click', encriptar);
 boton_desencriptar.addEventListener('click', desencriptar);
