@@ -69,8 +69,7 @@ header {
     height: 30rem;
     width: 60%;
 }
-@media only screen and (max-width: 600px) {
-}
+
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
     position: relative;

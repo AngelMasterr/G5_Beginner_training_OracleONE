@@ -44,9 +44,14 @@ function desencriptar() {
 
 function copiar_palabra_encriptada() {
     let copy_text = texto_resultado.textContent;
-    navigator.clipboard.writeText(copy_text);
-    caja_texto1.select();
-    caja_texto1.focus();
+    if (copy_text.trim() === '') {
+        alert('El input está vacío');
+    } else {
+        navigator.clipboard.writeText(copy_text);
+        caja_texto1.select();
+        caja_texto1.focus();
+        alert('El input tiene contenido');
+    }
 }
 
 function limpiar_caja_texto() {
