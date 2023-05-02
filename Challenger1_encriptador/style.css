@@ -136,6 +136,7 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 .seccion_2 {
     padding-right: 5%;
     padding-left: 2%;
+    margin-bottom: 5%;
     width: 40%;
     height: 480px;
 }
@@ -151,11 +152,47 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     box-shadow: 6px 6px 12px #c5c5c5;
     font-size: 0.2rem;
 }
+.texto_resultado {
+    word-break: break-all;
+}
 .contenedor_dibujo_hacker img {
     width: 100%;
     max-width: 320px;
 }
 
+/* llamar elementos desde script.js*/
+/* vibrar el mensaje "ningun mensaje fue encontrado*/
+.sacudir {
+    animation: sacudir 0.8s linear both;
+}
+@keyframes sacudir {
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(8deg);
+    }
+    20%,
+    40%,
+    60% {
+        transform: rotate(-10deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+}
+
+/* ocultar elementos para dar la respuesta */
 .ocultar {
     display: none;
 }

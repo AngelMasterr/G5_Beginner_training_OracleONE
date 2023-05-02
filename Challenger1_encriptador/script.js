@@ -10,48 +10,69 @@ let img_hacker1 = document.getElementById('img_hacker1');
 // Crear las funciones
 function encriptar() {
     let texto = String(caja_texto1.value);
-    let texto_encriptado = '';
-    let obj_letters = {
-        a: 'ai',
-        e: 'enter',
-        i: 'imes',
-        o: 'over',
-        u: 'ufat',
-    };
-    texto_encriptado = texto.replace(/a|e|i|o|u/g, function (letters) {
-        return obj_letters[letters];
-    });
-    console.log(texto_encriptado);
-    texto_resultado.textContent = texto_encriptado;
+    if (texto.trim() === '') {
+        // agregar y remover la animacion sacudir_objeto"
+        sacudir_objeto('.contenedor_dibujo_hacker');
+        sacudir_objeto('.mensaje_no_encontrado');
+    } else {
+        let texto_encriptado = '';
+        let obj_letters = {
+            a: 'ai',
+            e: 'enter',
+            i: 'imes',
+            o: 'over',
+            u: 'ufat',
+        };
+        texto_encriptado = texto.replace(/a|e|i|o|u/g, function (letters) {
+            return obj_letters[letters];
+        });
+        console.log(texto_encriptado);
+        texto_resultado.textContent = texto_encriptado;
+    }
 }
 
 function desencriptar() {
     let texto = String(caja_texto1.value);
-    let texto_encriptado = '';
-    let obj_letters = {
-        ai: 'a',
-        enter: 'e',
-        imes: 'i',
-        over: 'o',
-        ufat: 'u',
-    };
-    texto_encriptado = texto.replace(/ai|enter|imes|over|ufat/g, function (letters) {
-        return obj_letters[letters];
-    });
-    console.log(texto_encriptado);
-    texto_resultado.textContent = texto_encriptado;
+    if (texto.trim() === '') {
+        // agregar y remover la animacion sacudir_objeto"
+        sacudir_objeto('.contenedor_dibujo_hacker');
+        sacudir_objeto('.mensaje_no_encontrado');
+    } else {
+        let texto_encriptado = '';
+        let obj_letters = {
+            ai: 'a',
+            enter: 'e',
+            imes: 'i',
+            over: 'o',
+            ufat: 'u',
+        };
+        texto_encriptado = texto.replace(/ai|enter|imes|over|ufat/g, function (letters) {
+            return obj_letters[letters];
+        });
+        console.log(texto_encriptado);
+        texto_resultado.textContent = texto_encriptado;
+    }
 }
 
 function copiar_palabra_encriptada() {
     let copy_text = texto_resultado.textContent;
     if (copy_text.trim() === '') {
-        alert('El input está vacío');
+        // agregar y remover la animacion sacudir_objeto"
+        sacudir_objeto('.contenedor_dibujo_hacker');
+        sacudir_objeto('.mensaje_no_encontrado');
     } else {
         navigator.clipboard.writeText(copy_text);
         caja_texto1.select();
         caja_texto1.focus();
-        alert('El input tiene contenido');
     }
+}
+
+function sacudir_objeto(objeto) {
+    const sacudir_obj = document.querySelector(`${objeto}`);
+    sacudir_obj.classList.add('sacudir');
+    setTimeout(() => {
+        sacudir_obj.classList.remove('sacudir');
+    }, 800);
 }
 
 function limpiar_caja_texto() {
