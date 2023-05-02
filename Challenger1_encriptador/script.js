@@ -1,11 +1,12 @@
 // Obtener todos los elementos html
 const caja_texto1 = document.querySelector('.caja_texto1');
 const texto_resultado = document.querySelector('.texto_resultado');
+const mensaje_no_encontrado = document.querySelector('.mensaje_no_encontrado');
 const boton_encriptar = document.querySelector('.boton_encriptar');
 const boton_desencriptar = document.querySelector('.boton_desencriptar');
 const boton_limpiar = document.querySelector('.boton_limpiar');
 const boton_copiar = document.querySelector('.boton_copiar');
-let img_hacker1 = document.getElementById('img_hacker1');
+const contenedor_dibujo_hacker = document.querySelector('.contenedor_dibujo_hacker');
 
 // Crear las funciones
 function encriptar() {
@@ -15,6 +16,8 @@ function encriptar() {
         sacudir_objeto('.contenedor_dibujo_hacker');
         sacudir_objeto('.mensaje_no_encontrado');
     } else {
+        mensaje_no_encontrado.classList.add('ocultar');
+        contenedor_dibujo_hacker.classList.add('ocultar');
         let texto_encriptado = '';
         let obj_letters = {
             a: 'ai',
@@ -38,6 +41,8 @@ function desencriptar() {
         sacudir_objeto('.contenedor_dibujo_hacker');
         sacudir_objeto('.mensaje_no_encontrado');
     } else {
+        mensaje_no_encontrado.classList.add('ocultar');
+        contenedor_dibujo_hacker.classList.add('ocultar');
         let texto_encriptado = '';
         let obj_letters = {
             ai: 'a',
@@ -66,13 +71,15 @@ function copiar_palabra_encriptada() {
         caja_texto1.focus();
     }
 }
-
+// sacurdir objetos y hacerlo visible (remove ocultar)
 function sacudir_objeto(objeto) {
     const sacudir_obj = document.querySelector(`${objeto}`);
+    sacudir_obj.classList.remove('ocultar');
     sacudir_obj.classList.add('sacudir');
     setTimeout(() => {
         sacudir_obj.classList.remove('sacudir');
     }, 800);
+    texto_resultado.textContent = '';
 }
 
 function limpiar_caja_texto() {
