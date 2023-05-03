@@ -84,6 +84,8 @@ function sacudir_objeto(objeto) {
 
 function limpiar_caja_texto() {
     caja_texto1.value = '';
+    caja_texto1.style.height = 'auto';
+    caja_texto1.style.height = `${caja_texto1.scrollHeight}px`;
 }
 
 // Detectar que solo introduzca letras minusculas y sin acentos
@@ -98,3 +100,9 @@ boton_encriptar.addEventListener('click', encriptar);
 boton_desencriptar.addEventListener('click', desencriptar);
 boton_copiar.addEventListener('click', copiar_palabra_encriptada);
 boton_limpiar.addEventListener('click', limpiar_caja_texto);
+
+// Ajustar la caja_texto1 segun la cantidad de palabras introducidas
+caja_texto1.addEventListener('input', () => {
+    caja_texto1.style.height = 'auto';
+    caja_texto1.style.height = `${caja_texto1.scrollHeight}px`;
+});

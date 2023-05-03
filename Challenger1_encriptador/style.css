@@ -65,22 +65,22 @@ header {
 
 .seccion_1 {
     position: relative;
-    padding-left: 5%;
-    padding-right: 2%;
     height: 30rem;
     width: 60%;
-    border: 1px solid #0a3871;
 }
 
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
     position: absolute;
-    width: 88%;
+    width: 100%;
     height: auto;
+    padding-left: 8.5%;
+    padding-right: 3.5%;
 }
 .caja_texto1 {
     width: 100%;
-    height: auto;
+    height: 5.47rem;
+    max-height: 350px;
     resize: none;
     border: 2px solid #e1e5ee;
     border-radius: 0.5rem;
@@ -88,7 +88,7 @@ header {
     font-size: 1.3rem;
     font-weight: 400;
     outline: none;
-    padding: 1.25rem;
+    padding: 1.2rem;
     background: white;
 }
 /* Cambiar el borde cuando este el input focus*/
@@ -101,8 +101,8 @@ header {
 /* crear el label dentro de la caja de texto*/
 .label_caja_texto1 {
     position: absolute;
-    left: 1rem;
-    top: 1rem;
+    left: 11%;
+    top: 1.4rem;
     padding: 0 0.5rem;
     color: #888484;
     font-size: 1.1rem;
@@ -117,21 +117,23 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 .caja_texto1:not(:placeholder-shown).caja_texto1:not(:focus) ~ .label_caja_texto1 {
     top: -0.5rem;
     font-size: 0.8rem;
-    left: 0.9rem;
 }
 
 .alerta {
     position: absolute;
     display: flex;
-    top: 385px;
+    bottom: 55px;
+    padding-left: 8.5%;
     align-items: center;
     gap: 10px;
 }
 .contenedor_botones {
     position: absolute;
     display: grid;
-    width: 88%;
-    bottom: 1rem;
+    width: 100%;
+    bottom: 0;
+    padding-left: 8.5%;
+    padding-right: 3.5%;
     /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
@@ -212,17 +214,22 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 /* TABLETS */
 @media only screen and (max-width: 768px) {
     /* SECCION 1 */
+    .caja_texto1 {
+        max-height: 300px;
+    }
+    .label_caja_texto1 {
+        left: 12%;
+    }
     .contenedor_botones {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        bottom: 1rem;
     }
     .boton_encriptar {
         grid-column-start: 1;
         grid-column-end: 3;
     }
     .alerta {
-        top: 325px;
+        bottom: 115px;
     }
 }
 /* SMALL TABLETS */
@@ -230,27 +237,41 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     /* SECCION 1 */
     .seccion_1 {
         width: 100%;
-        padding-right: 5%;
+    }
+    .contenedor_caja_texto1 {
+        padding: 0 5%;
+    }
+    .caja_texto1 {
+        max-height: 15rem;
+    }
+    .label_caja_texto1 {
+        left: 7.5%;
     }
     .contenedor_botones {
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr;
         bottom: 1rem;
         grid-gap: 10px;
+        padding: 0 5%;
     }
     .boton_encriptar {
         grid-column-start: 1;
         grid-column-end: 2;
     }
     .alerta {
-        top: 17.2rem;
+        bottom: 11.5rem;
+        padding-left: 5%;
     }
     /* SECCION 2 */
     .seccion_2 {
         width: 100%;
-        padding-left: 5%;
-        height: 350px;
+        padding: 0 5%;
+        height: 26rem;
     }
+    .texto_resultado {
+        max-height: 15rem;
+    }
+
     .contenedor_dibujo_hacker img {
         max-width: 220px;
     }
