@@ -71,7 +71,7 @@ function copiar_palabra_encriptada() {
         caja_texto1.focus();
     }
 }
-// sacurdir objetos y hacerlo visible (remove ocultar)
+// sacurdir objetos y hacerlos visibles (remove ocultar)
 function sacudir_objeto(objeto) {
     const sacudir_obj = document.querySelector(`${objeto}`);
     sacudir_obj.classList.remove('ocultar');

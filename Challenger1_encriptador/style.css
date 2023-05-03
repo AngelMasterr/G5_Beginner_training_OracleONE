@@ -64,20 +64,24 @@ header {
 }
 
 .seccion_1 {
+    position: relative;
     padding-left: 5%;
     padding-right: 2%;
     height: 30rem;
     width: 60%;
+    border: 1px solid #0a3871;
 }
 
 /* darle estilo dinamico a la caja de texto input*/
 .contenedor_caja_texto1 {
-    position: relative;
-    height: 3.5rem;
+    position: absolute;
+    width: 88%;
+    height: auto;
 }
 .caja_texto1 {
     width: 100%;
-    height: 100%;
+    height: auto;
+    resize: none;
     border: 2px solid #e1e5ee;
     border-radius: 0.5rem;
     color: #0a3871;
@@ -117,18 +121,19 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 }
 
 .alerta {
-    position: relative;
+    position: absolute;
     display: flex;
-    top: 350px;
+    top: 385px;
     align-items: center;
     gap: 10px;
 }
 .contenedor_botones {
-    position: relative;
+    position: absolute;
     display: grid;
+    width: 88%;
+    bottom: 1rem;
     /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr;
-    top: 360px;
     justify-content: space-between;
     grid-gap: 15px;
 }
@@ -156,7 +161,10 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 }
 .texto_resultado {
     word-break: break-all;
+    max-height: 280px;
     font-size: 1.2rem;
+    overflow: auto;
+    text-overflow: ellipsis;
 }
 .contenedor_dibujo_hacker img {
     width: 100%;
@@ -207,14 +215,14 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     .contenedor_botones {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        top: 300px;
+        bottom: 1rem;
     }
     .boton_encriptar {
         grid-column-start: 1;
         grid-column-end: 3;
     }
     .alerta {
-        top: 290px;
+        top: 325px;
     }
 }
 /* SMALL TABLETS */
@@ -227,7 +235,7 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     .contenedor_botones {
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr;
-        top: 14.375rem;
+        bottom: 1rem;
         grid-gap: 10px;
     }
     .boton_encriptar {
@@ -235,7 +243,7 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
         grid-column-end: 2;
     }
     .alerta {
-        top: 13.75rem;
+        top: 17.2rem;
     }
     /* SECCION 2 */
     .seccion_2 {
