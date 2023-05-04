@@ -10,6 +10,10 @@
 
 body {
     background-color: #f4f4fc;
+    transition: 0.4s ease all;
+}
+body.dark {
+    background-color: #2e2e2e;
 }
 
 /* contiene encabezado class text_titulo - imagen: logo_a*/
@@ -38,6 +42,9 @@ header {
         opacity: 1;
     }
 }
+body.dark .text_titulo {
+    color: #ffffff;
+}
 
 /* Centrar y darle animacion de rotacion al logo de alura "a"*/
 .logo_a {
@@ -52,6 +59,9 @@ header {
     100% {
         transform: rotate(360deg);
     }
+}
+body.dark .logo_a {
+    content: url('imagenes/logo_a2.png');
 }
 
 .cuerpo_principal {
@@ -97,6 +107,11 @@ header {
 .caja_texto1:focus {
     border-color: #5f8aa7;
 }
+body.dark .caja_texto1 {
+    background-color: #424242;
+    color: #ffffff;
+}
+
 /* crear el label dentro de la caja de texto*/
 .label_caja_texto1 {
     position: absolute;
@@ -117,6 +132,10 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     top: -0.5rem;
     font-size: 0.8rem;
 }
+body.dark .label_caja_texto1 {
+    background-color: #424242;
+    color: #ffffff;
+}
 
 .alerta {
     position: absolute;
@@ -126,6 +145,13 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     align-items: center;
     gap: 10px;
 }
+body.dark .alerta {
+    color: #ffffff;
+}
+body.dark .alerta img {
+    content: url('imagenes/exclamation3.png');
+}
+
 .contenedor_botones {
     position: absolute;
     display: grid;
@@ -160,6 +186,12 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     box-shadow: 6px 6px 12px #c5c5c5;
     font-size: 0.2rem;
 }
+body.dark .contenedor_seccion_2 {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    box-shadow: 6px 6px 12px #000000;
+}
+
 .texto_resultado {
     word-break: break-all;
     max-height: 280px;
@@ -170,6 +202,9 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 .contenedor_dibujo_hacker img {
     width: 100%;
     max-width: 320px;
+}
+body.dark .contenedor_dibujo_hacker img {
+    content: url('imagenes/hacker-friend2.gif');
 }
 
 /* llamar elementos desde script.js*/
@@ -295,5 +330,8 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
 @media only screen and (max-width: 440px) {
     * {
         font-size: 13px;
+        .alerta img {
+            width: 15px;
+        }
     }
 }

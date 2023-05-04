@@ -7,6 +7,7 @@ const boton_desencriptar = document.querySelector('.boton_desencriptar');
 const boton_limpiar = document.querySelector('.boton_limpiar');
 const boton_copiar = document.querySelector('.boton_copiar');
 const contenedor_dibujo_hacker = document.querySelector('.contenedor_dibujo_hacker');
+const boton_switch = document.querySelector('.switch');
 
 // Crear las funciones
 function encriptar() {
@@ -100,9 +101,13 @@ boton_encriptar.addEventListener('click', encriptar);
 boton_desencriptar.addEventListener('click', desencriptar);
 boton_copiar.addEventListener('click', copiar_palabra_encriptada);
 boton_limpiar.addEventListener('click', limpiar_caja_texto);
-
 // Ajustar la caja_texto1 segun la cantidad de palabras introducidas
 caja_texto1.addEventListener('input', () => {
     caja_texto1.style.height = 'auto';
     caja_texto1.style.height = `${caja_texto1.scrollHeight}px`;
+});
+
+// Cambiar al modo noche con el boto switch
+boton_switch.addEventListener('change', () => {
+    document.body.classList.toggle('dark');
 });
