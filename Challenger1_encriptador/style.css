@@ -17,13 +17,12 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
+    padding: 0 5%;
     height: 5rem;
 }
 .text_titulo {
-    position: absolute;
-    left: 5.2%;
     font-size: 1.7rem;
     color: #41667e;
     animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -202,6 +201,22 @@ Mantener el estado de la etiqueta cuando el contenido está en el campo de entra
     }
     90% {
         transform: rotate(8deg);
+    }
+}
+
+.transicion_dia_noche {
+    animation: wipe-cinematic-in 1.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+@keyframes wipe-cinematic-in {
+    0% {
+        clip-path: inset(100% 0 100% 0);
+    }
+    30%,
+    70% {
+        clip-path: inset(10% 0 10% 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
     }
 }
 
