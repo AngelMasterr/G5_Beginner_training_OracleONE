@@ -1,81 +1,84 @@
-header{
+header {
     background-color: rgb(247, 216, 177);
-    padding: 20px 0;    /* 20px: top - botton, 0: left - right */
+    padding: 20px 0; /* 20px: top - botton, 0: left - right */
 }
-.caja{
+.caja {
     position: relative;
     width: 960px;
-    margin: 0 auto;     /* 0: top - botton, auto: left - right */
+    margin: 0 auto; /* 0: top - botton, auto: left - right */
 }
-nav{
+nav {
     position: absolute; /* es necesario que el contenedor tenga una posicion definida, de lo contrario tomara la posición de la pagina*/
-    top: 50%;           /* ubicación vertical dentro del contenedor, desde que el contenedro tenga la posición definida */
+    top: 50%; /* ubicación vertical dentro del contenedor, desde que el contenedro tenga la posición definida */
     transform: translateY(-50%); /* segun la altura del objeto lo desplaza la mitad hacia arriba*/
-    right: 0;           /* quede separada de la parte derecha un 0% */ 
+    right: 0; /* quede separada de la parte derecha un 0% */
 }
-nav li{
+nav li {
     display: inline; /* la listas ocupa solo su ancho, ya no ocupa todo la liena de la pagina */
-    margin: 0 0 0 15px; /*margenes: top, down, right, left */   
+    margin: 0 0 0 15px; /*margenes: top, down, right, left */
 }
-nav a{
+nav a {
     text-transform: uppercase;
     color: black;
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
 }
-nav a:hover{ /* cambia el color cuando el mouse pasa por encima de las palabras con links*/
+nav a:hover {
+    /* cambia el color cuando el mouse pasa por encima de las palabras con links*/
     color: chocolate;
     text-decoration: underline;
 }
-.productos{
-    display: flex;  /* permite que el contenido se pueda desplazar al centro*/
-    height: 400px;           
+.productos {
+    display: flex; /* permite que el contenido se pueda desplazar al centro*/
+    height: 400px;
     width: 960px;
     justify-content: center;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 50px;
 }
-.productos li{
-    display: inline-block; 
+.productos li {
+    display: inline-block;
     width: 30%;
-    text-align: center;    
-    vertical-align: top;    
+    text-align: center;
+    vertical-align: top;
     margin: 0 1.5%;
     padding: 30px 20px;
     border-color: black;
-    border: 3px solid black;    
+    border: 3px solid black;
     border-radius: 20px;
 }
-.productos li:hover{ /* cambia el color cuando el mouse pasa por encima del objeto*/
+.productos li:hover {
+    /* cambia el color cuando el mouse pasa por encima del objeto*/
     border: 4px solid goldenrod;
 }
-.productos li:hover h2{ /* cambia el tamaño del h2 cuando el mouse pasa por encima del objeto*/
+.productos li:hover h2 {
+    /* cambia el tamaño del h2 cuando el mouse pasa por encima del objeto*/
     font-size: 35px;
 }
-.productos li:active{
+.productos li:active {
     border: 4px solid rgb(15, 143, 3);
 }
-.productos h2{
+.productos h2 {
     font-size: 30px;
-    font-weight: bold;    
+    font-weight: bold;
 }
-.productos_descripcion{
+.productos_descripcion {
     font-size: 18px;
 }
-.productos_precio{
+.productos_precio {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-footer{
+footer {
     text-align: center;
     background-color: black;
     padding: 30px;
 }
-.copyright{
-    color: white; 
+.copyright {
+    color: white;
     font-size: 12px;
     margin-top: 15px;
 }
