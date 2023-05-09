@@ -1,21 +1,20 @@
 header {
     background-color: rgb(247, 216, 177);
-    padding: 20px 0; /* 20px: top - botton, 0: left - right */
+    padding: 20px 0px; /* 20px: top - botton, 0: left - right */
 }
 .caja {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin: 0 auto; /* 0: top - botton, auto: left - right */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-nav {
-    position: absolute; /* es necesario que el contenedor tenga una posicion definida, de lo contrario tomara la posición de la pagina*/
-    top: 50%; /* ubicación vertical dentro del contenedor, desde que el contenedro tenga la posición definida */
-    transform: translateY(-50%); /* segun la altura del objeto lo desplaza la mitad hacia arriba*/
-    right: 0; /* quede separada de la parte derecha un 0% */
-}
+
 nav li {
     display: inline; /* la listas ocupa solo su ancho, ya no ocupa todo la liena de la pagina */
-    margin: 0 0 0 15px; /*margenes: top, down, right, left */
+    margin-left: 15px; /*margenes: top, down, right, left */
 }
 nav a {
     text-transform: uppercase;
@@ -83,12 +82,12 @@ footer {
     margin-top: 15px;
 }
 main {
-    width: 940px;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
 form {
-    margin: 40px 0;
+    margin: 40px 10%;
 }
 form label,
 form legend {
@@ -125,7 +124,7 @@ form legend {
 }
 
 table {
-    margin: 40px 40px;
+    margin: 40px 10%;
 }
 thead {
     background-color: #555555;
@@ -142,12 +141,13 @@ th {
 
 .banner {
     /* contenedor de la imagen */
-    width: 98%; /* ancho del tamaño del contenedor */
+    width: 100%; /* ancho del tamaño del contenedor */
     height: 300px; /* alto del tamaño del contenedor */
     border: 1px solid #ccc;
     padding: 10px; /* borde que se separa la imagen del contenedor */
     overflow: hidden; /* recorta cualquier contenido que se salga del contenedor */
     display: flex; /* establece un contenedor de tipo flexbox */
+    box-sizing: border-box;
     /*align-items: bottom; /* centra verticalmente el contenido del contenedor */
 }
 .banner img {
@@ -160,4 +160,24 @@ th {
 .titulo_principal {
     text-align: center;
     font-size: 2em;
+    padding: 15px 0 20px 0;
+}
+
+.principal p {
+    text-align: justify;
+    margin: 0 10% 1em 10%;
+}
+.principal strong {
+    font-weight: bold;
+}
+.principal em {
+    font-style: italic;
+}
+
+.diferenciales ul {
+    margin: 0 10% 1em 10%;
+}
+.diferenciales img {
+    width: 60%;
+    margin-left: 10%;
 }
