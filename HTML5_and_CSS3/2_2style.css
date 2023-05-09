@@ -4,7 +4,7 @@ header {
 }
 .caja {
     position: relative;
-    width: 960px;
+    width: 100%;
     margin: 0 auto; /* 0: top - botton, auto: left - right */
 }
 nav {
@@ -81,4 +81,83 @@ footer {
     color: white;
     font-size: 12px;
     margin-top: 15px;
+}
+main {
+    width: 940px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+form {
+    margin: 40px 0;
+}
+form label,
+form legend {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.input_padron {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 50%;
+}
+.checkbox {
+    margin: 20px 0;
+}
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(218, 116, 76);
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.enviar:hover {
+    background-color: brown;
+    transform: scale(1.1) rotate(10deg);
+}
+
+table {
+    margin: 40px 40px;
+}
+thead {
+    background-color: #555555;
+    color: white;
+    font-weight: bold;
+}
+td,
+th {
+    border: solid 1px #2b2b2b;
+    padding: 8px 15px;
+}
+
+/* Estilo para nuestra pagina home */
+
+.banner {
+    /* contenedor de la imagen */
+    width: 98%; /* ancho del tamaño del contenedor */
+    height: 300px; /* alto del tamaño del contenedor */
+    border: 1px solid #ccc;
+    padding: 10px; /* borde que se separa la imagen del contenedor */
+    overflow: hidden; /* recorta cualquier contenido que se salga del contenedor */
+    display: flex; /* establece un contenedor de tipo flexbox */
+    /*align-items: bottom; /* centra verticalmente el contenido del contenedor */
+}
+.banner img {
+    /* caracteristicas de la imagen */
+    width: 100%; /* ajusta el ancho de la imagen al 100% del contenedor */
+    object-fit: cover; /* ajusta la imagen para cubrir todo el contenedor */
+    object-position: center -10px; /* alinea la imagen en el centro horizontalmente, en la parte superior del contenedor, con un desplazamiento de 50px hacia abajo */
+}
+
+.titulo_principal {
+    text-align: center;
+    font-size: 2em;
 }

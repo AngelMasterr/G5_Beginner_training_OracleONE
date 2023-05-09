@@ -13,49 +13,64 @@
         <!--garantiza que los navegadores web muestren correctamente los caracteres especiales y acentos de cualquier idioma en la página web.-->
         <title>Barbería Alura</title>
         <!-- titulo de la pagina, se muestra en la pestaña del navegador -->
-
-        <link rel="stylesheet" href="1_2style.css" />
+        <link rel="stylesheet" href="2_2style.css" />
         <!--llama el archivo "1_2style.css" el cual tiene los estilos de <p> y <h1>-->
+        <link rel="stylesheet" href="reset.css" />
     </head>
 
     <body>
         <!-- Etiquetas de contenido -->
-
         <header>
-            <!-- etiqueta que se usa solo para encabezados-->
-            <h1 class="tituloPrincipal">Barberia Alura</h1>
+            <!--Etiqueta para el encabezado-->
+            <div class="caja">
+                <h1><img src="imagenes/logo.png" /></h1>
+                <!-- nav: etiqueta para referirse al panel de navegacion-->
+                <nav>
+                    <ul>
+                        <li><a href="1_1index.html"> Home</a></li>
+                        <li><a href="2_1productos.html">Productos</a></li>
+                        <li><a href="3_1contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-
-        <div class="image-container">
+        <div class="banner">
             <!-- insertar una imagen -->
             <img src="imagenes/barber-g06c8bb1b0_1280.jpg" alt="imgane de una barberia" />
         </div>
+        <main>
+            <section class="principal">
+                <h2 class="titulo_principal">Sobre la Barbería ALURA</h2>
 
-        <div class="principal">
-            <h1>Sobre la Barbería ALURA</h1>
+                <p>Ubicada en el corazon de Medellín, Colombia, la <strong>Barbería ALURA</strong> se enfoca en proporcionar una experiencia de corte de cabello y afeitado de alta calidad para hombres de todas las edades. La misión de la barbería es crear un ambiente acogedor y relajante para los clientes, donde puedan disfrutar de un servicio personalizado y detallado.</p>
 
-            <p>Ubicada en el corazon de Medellín, Colombia, la <strong>Barbería ALURA</strong> se enfoca en proporcionar una experiencia de corte de cabello y afeitado de alta calidad para hombres de todas las edades. La misión de la barbería es crear un ambiente acogedor y relajante para los clientes, donde puedan disfrutar de un servicio personalizado y detallado.</p>
+                <p id="servicio">
+                    <em>Se ofrecen servicios de corte de cabello, afeitado de barba y patillas, arreglo de cejas y masajes faciales.<strong> Los barberos están altamente capacitados y utilizan técnicas modernas y tradicionales para brindar un resultado excepcional.</strong></em>
+                </p>
 
-            <p id="servicio">
-                <em>Se ofrecen servicios de corte de cabello, afeitado de barba y patillas, arreglo de cejas y masajes faciales.<strong> Los barberos están altamente capacitados y utilizan técnicas modernas y tradicionales para brindar un resultado excepcional.</strong></em>
-            </p>
+                <p>Además, la barbería cuenta con una variedad de productos para el cuidado del cabello y la barba, como aceites, cremas, champús y acondicionadores, disponibles para su venta. En general, la barbería se enfoca en crear una experiencia de cuidado personal completa y satisfactoria para sus clientes.</p>
+            </section>
 
-            <p>Además, la barbería cuenta con una variedad de productos para el cuidado del cabello y la barba, como aceites, cremas, champús y acondicionadores, disponibles para su venta. En general, la barbería se enfoca en crear una experiencia de cuidado personal completa y satisfactoria para sus clientes.</p>
-        </div>
+            <section class="diferenciales">
+                <h2 class="centrarTitulo">Diferenciales</h2>
+                <!-- <ul>: Indica que se le va a pasar una lista-->
+                <ul>
+                    <!-- <li> indica que esto se muestre como una etiqueta -->
+                    <li class="items">Atención personalizada a los clientes</li>
+                    <li class="items">Espacio diferenciado</li>
+                    <li class="items">Localización</li>
+                    <li class="items">Profesionales destacados</li>
+                </ul>
 
-        <div class="diferenciales">
-            <h2 class="centrarTitulo">Diferenciales</h2>
-            <!-- <ul>: Indica que se le va a pasar una lista-->
-            <ul>
-                <!-- <li> indica que esto se muestre como una etiqueta -->
-                <li class="items">Atención personalizada a los clientes</li>
-                <li class="items">Espacio diferenciado</li>
-                <li class="items">Localización</li>
-                <li class="items">Profesionales destacados</li>
-            </ul>
+                <img src="imagenes/barbershop-gf7632a0de_1280.jpg" class="imagenDiferencial" />
+            </section>
+        </main>
 
-            <img src="imagenes/barbershop-gf7632a0de_1280.jpg" class="imagenDiferencial" />
-        </div>
+        <footer>
+            <!--Etiqueta para el pie de pagina -->
+            <img src="imagenes/logo-blanco.png" alt="logo_pie_pagina" />
+            <p class="copyright">&copy Copyright Barbería Alura 2023</p>
+        </footer>
     </body>
 </html>
 <!--define el final de la estructura y el contenido de un documento HTML-->
