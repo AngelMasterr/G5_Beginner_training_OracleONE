@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="2_2style.css" />
         <!--llama el archivo "1_2style.css" el cual tiene los estilos de <p> y <h1>-->
         <link rel="stylesheet" href="reset.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     </head>
 
     <body>
@@ -42,6 +45,8 @@
             <section class="principal">
                 <h2 class="titulo_principal">Sobre la Barbería ALURA</h2>
 
+                <img src="imagenes/utensilios[1].jpg" alt="utencilios" class="img_utencilios" />
+
                 <p>Ubicada en el corazon de Medellín, Colombia, la <strong>Barbería ALURA</strong> se enfoca en proporcionar una experiencia de corte de cabello y afeitado de alta calidad para hombres de todas las edades. La misión de la barbería es crear un ambiente acogedor y relajante para los clientes, donde puedan disfrutar de un servicio personalizado y detallado.</p>
 
                 <p id="servicio">
@@ -51,18 +56,30 @@
                 <p>Además, la barbería cuenta con una variedad de productos para el cuidado del cabello y la barba, como aceites, cremas, champús y acondicionadores, disponibles para su venta. En general, la barbería se enfoca en crear una experiencia de cuidado personal completa y satisfactoria para sus clientes.</p>
             </section>
 
+            <section class="mapa">
+                <h3 class="titulo_principal">Nuestra Ubicación</h3>
+                <p>Nuestro establecimiento esta ubicado en el corazón de la ciudad</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20683.73009235085!2d-46.642325607169134!3d-23.589928520203994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Education%20and%20Innovation!5e0!3m2!1ses-419!2sco!4v1683677815634!5m2!1ses-419!2sco" width="80%" height="300" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
             <section class="diferenciales">
                 <h2 class="titulo_principal">Diferenciales</h2>
                 <!-- <ul>: Indica que se le va a pasar una lista-->
-                <ul>
-                    <!-- <li> indica que esto se muestre como una etiqueta -->
-                    <li class="items">Atención personalizada a los clientes</li>
-                    <li class="items">Espacio diferenciado</li>
-                    <li class="items">Localización</li>
-                    <li class="items">Profesionales destacados</li>
-                </ul>
-
-                <img src="imagenes/barbershop-gf7632a0de_1280.jpg" class="imagenDiferencial" />
+                <div class="contenido_diferenciales">
+                    <ul class="lista_diferenciales">
+                        <!-- <li> indica que esto se muestre como una etiqueta -->
+                        <li class="items"><strong>Atención personalizada a los clientes</strong></li>
+                        <li class="items">Espacio diferenciado</li>
+                        <li class="items">Localización</li>
+                        <li class="items">Profesionales destacados</li>
+                        <li class="items">Puntualidad</li>
+                        <li class="items">Limpieza</li>
+                    </ul>
+                    <img src="imagenes/barbershop-gf7632a0de_1280.jpg" class="imagenDiferencial" />
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Nr68e_Y1-po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </section>
         </main>
 
