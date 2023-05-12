@@ -205,19 +205,28 @@ th {
 }
 .contenido_diferenciales {
     display: flex;
-    width: 640px;
-    margin: 0 auto;
+    justify-content: space-evenly;
+    width: 80%;
     padding-bottom: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .diferenciales ul {
     width: 40%;
-    margin-bottom: 1em;
     color: white;
 }
 .diferenciales img {
-    width: 60%;
+    width: 55%;
+    max-width: 400px;
+    transition: 400ms;
+    box-shadow: 10px 10px 20px black;
+    object-fit: cover;
 }
+.diferenciales img:hover {
+    opacity: 0.5;
+}
+
 .diferenciales li {
     margin-bottom: 10px;
     line-height: 1.3;
